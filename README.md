@@ -7,9 +7,8 @@ that corrects errors in previous console commands.
 
 Is *Command Helper* too slow? [Try the experimental instant mode!](#experimental-instant-mode)
 
-[![gif with examples][examples-link]][examples-link]
 
-More examples:
+Examples:
 
 ```bash
 ➜ apt-get install vim
