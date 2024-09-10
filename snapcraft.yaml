@@ -14,8 +14,8 @@ apps:
     command: bin/commandhelper
     environment:
         PYTHONIOENCODING: utf-8
-  fuck:
-    command: bin/fuck
+  alo:
+    command: bin/alo
     environment:
         PYTHONIOENCODING: utf-8
 

@@ -65,7 +65,7 @@ class TestGetCloseMatches(object):
 @pytest.fixture
 def get_aliases(mocker):
     mocker.patch('commandhelper.shells.shell.get_aliases',
-                 return_value=['vim', 'apt-get', 'fsck', 'fuck'])
+                 return_value=['vim', 'apt-get', 'fsck', 'alo'])
 
 
 @pytest.mark.usefixtures('no_memoize', 'get_aliases')
@@ -73,7 +73,7 @@ def test_get_all_executables():
     all_callables = get_all_executables()
     assert 'vim' in all_callables
     assert 'fsck' in all_callables
-    assert 'fuck' not in all_callables
+    assert 'alo' not in all_callables
 
 
 @pytest.fixture
@@ -246,14 +246,14 @@ class TestGetValidHistoryWithoutCurrent(object):
         mock = mocker.patch('commandhelper.shells.shell.get_history')
         #  Passing as an argument causes `UnicodeDecodeError`
         #  with newer pytest and python 2.7
-        mock.return_value = ['le cat', 'fuck', 'ls cat',
+        mock.return_value = ['le cat', 'alo', 'ls cat',
                              'diff x', 'nocommand x', u'café ô']
         return mock
 
     @pytest.fixture(autouse=True)
     def alias(self, mocker):
         return mocker.patch('commandhelper.utils.get_alias',
-                            return_value='fuck')
+                            return_value='alo')
 
     @pytest.fixture(autouse=True)
     def bins(self, mocker):
@@ -268,7 +268,7 @@ class TestGetValidHistoryWithoutCurrent(object):
     @pytest.mark.parametrize('script, result', [
         ('le cat', ['ls cat', 'diff x', u'café ô']),
         ('diff x', ['ls cat', u'café ô']),
-        ('fuck', ['ls cat', 'diff x', u'café ô']),
+        ('alo', ['ls cat', 'diff x', u'café ô']),
         (u'cafe ô', ['ls cat', 'diff x', u'café ô']),
     ])
     def test_get_valid_history_without_current(self, script, result):

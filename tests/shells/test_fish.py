@@ -15,7 +15,7 @@ class TestFish(object):
     def Popen(self, mocker):
         mock = mocker.patch('commandhelper.shells.fish.Popen')
         mock.return_value.stdout.read.side_effect = [(
-            b'cd\nfish_config\nfuck\nfunced\nfuncsave\ngrep\nhistory\nll\nls\n'
+            b'cd\nfish_config\nalo\nfunced\nfuncsave\ngrep\nhistory\nll\nls\n'
             b'man\nmath\npopd\npushd\nruby'),
             (b'alias fish_key_reader /usr/bin/fish_key_reader\nalias g git\n'
              b'alias alias_with_equal_sign=echo\ninvalid_alias'), b'func1\nfunc2', b'']
@@ -36,7 +36,7 @@ class TestFish(object):
     @pytest.mark.parametrize('before, after', [
         ('cd', 'cd'),
         ('pwd', 'pwd'),
-        ('fuck', 'fish -ic "fuck"'),
+        ('alo', 'fish -ic "alo"'),
         ('find', 'find'),
         ('funced', 'fish -ic "funced"'),
         ('grep', 'grep'),
@@ -62,7 +62,7 @@ class TestFish(object):
 
     def test_get_aliases(self, shell):
         assert shell.get_aliases() == {'fish_config': 'fish_config',
-                                       'fuck': 'fuck',
+                                       'alo': 'alo',
                                        'funced': 'funced',
                                        'funcsave': 'funcsave',
                                        'history': 'history',
@@ -77,24 +77,24 @@ class TestFish(object):
         assert shell.get_aliases() == {'func1': 'func1', 'func2': 'func2'}
 
     def test_app_alias(self, shell):
-        assert 'function fuck' in shell.app_alias('fuck')
-        assert 'function FUCK' in shell.app_alias('FUCK')
-        assert 'commandhelper' in shell.app_alias('fuck')
-        assert 'TF_SHELL=fish' in shell.app_alias('fuck')
-        assert 'TF_ALIAS=fuck PYTHONIOENCODING' in shell.app_alias('fuck')
-        assert 'PYTHONIOENCODING=utf-8 commandhelper' in shell.app_alias('fuck')
-        assert ARGUMENT_PLACEHOLDER in shell.app_alias('fuck')
+        assert 'function alo' in shell.app_alias('alo')
+        assert 'function ALO' in shell.app_alias('ALO')
+        assert 'commandhelper' in shell.app_alias('alo')
+        assert 'TF_SHELL=fish' in shell.app_alias('alo')
+        assert 'TF_ALIAS=alo PYTHONIOENCODING' in shell.app_alias('alo')
+        assert 'PYTHONIOENCODING=utf-8 commandhelper' in shell.app_alias('alo')
+        assert ARGUMENT_PLACEHOLDER in shell.app_alias('alo')
 
     def test_app_alias_alter_history(self, settings, shell):
         settings.alter_history = True
         assert (
-            'builtin history delete --exact --case-sensitive -- $fucked_up_command\n'
-            in shell.app_alias('FUCK')
+            'builtin history delete --exact --case-sensitive -- $aloed_up_command\n'
+            in shell.app_alias('ALO')
         )
-        assert 'builtin history merge\n' in shell.app_alias('FUCK')
+        assert 'builtin history merge\n' in shell.app_alias('ALO')
         settings.alter_history = False
-        assert 'builtin history delete' not in shell.app_alias('FUCK')
-        assert 'builtin history merge' not in shell.app_alias('FUCK')
+        assert 'builtin history delete' not in shell.app_alias('ALO')
+        assert 'builtin history merge' not in shell.app_alias('ALO')
 
     def test_get_history(self, history_lines, shell):
         history_lines(['- cmd: ls', '  when: 1432613911',

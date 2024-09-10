@@ -93,7 +93,7 @@ def test_on_first_run(usage_tracker_io, usage_tracker_exists, shell_pid, logs):
 
 def test_on_run_after_other_commands(usage_tracker_io, shell_pid, shell, logs):
     shell_pid.return_value = 12
-    shell.get_history.return_value = ['fuck', 'ls']
+    shell.get_history.return_value = ['alo', 'ls']
     _change_tracker(usage_tracker_io, 12)
     main()
     logs.how_to_configure_alias.assert_called_once()
@@ -101,7 +101,7 @@ def test_on_run_after_other_commands(usage_tracker_io, shell_pid, shell, logs):
 
 def test_on_first_run_from_current_shell(usage_tracker_io, shell_pid,
                                          shell, logs):
-    shell.get_history.return_value = ['fuck']
+    shell.get_history.return_value = ['alo']
     shell_pid.return_value = 12
     main()
     _assert_tracker_updated(usage_tracker_io, 12)
@@ -121,7 +121,7 @@ def test_when_cant_configure_automatically(shell_pid, shell, logs):
 
 def test_when_already_configured(usage_tracker_io, shell_pid,
                                  shell, shell_config, logs):
-    shell.get_history.return_value = ['fuck']
+    shell.get_history.return_value = ['alo']
     shell_pid.return_value = 12
     _change_tracker(usage_tracker_io, 12)
     shell_config.read.return_value = 'eval $(commandhelper --alias)'
@@ -131,7 +131,7 @@ def test_when_already_configured(usage_tracker_io, shell_pid,
 
 def test_when_successfully_configured(usage_tracker_io, shell_pid,
                                       shell, shell_config, logs):
-    shell.get_history.return_value = ['fuck']
+    shell.get_history.return_value = ['alo']
     shell_pid.return_value = 12
     _change_tracker(usage_tracker_io, 12)
     shell_config.read.return_value = ''

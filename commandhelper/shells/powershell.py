@@ -10,10 +10,10 @@ class Powershell(Generic):
         return 'function ' + alias_name + ' {\n' \
                '    $history = (Get-History -Count 1).CommandLine;\n' \
                '    if (-not [string]::IsNullOrWhiteSpace($history)) {\n' \
-               '        $fuck = $(commandhelper $args $history);\n' \
-               '        if (-not [string]::IsNullOrWhiteSpace($fuck)) {\n' \
-               '            if ($fuck.StartsWith("echo")) { $fuck = $fuck.Substring(5); }\n' \
-               '            else { iex "$fuck"; }\n' \
+               '        $alo = $(commandhelper $args $history);\n' \
+               '        if (-not [string]::IsNullOrWhiteSpace($alo)) {\n' \
+               '            if ($alo.StartsWith("echo")) { $alo = $alo.Substring(5); }\n' \
+               '            else { iex "$alo"; }\n' \
                '        }\n' \
                '    }\n' \
                '    [Console]::ResetColor() \n' \

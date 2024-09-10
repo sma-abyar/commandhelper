@@ -119,7 +119,7 @@ def get_all_executables():
             return fallback
 
     tf_alias = get_alias()
-    tf_entry_points = ['commandhelper', 'fuck']
+    tf_entry_points = ['commandhelper', 'alo']
 
     bins = [exe.name.decode('utf8') if six.PY2 else exe.name
             for path in os.environ.get('PATH', '').split(os.pathsep)
@@ -306,13 +306,13 @@ def get_installation_version():
 
 
 def get_alias():
-    return os.environ.get('TF_ALIAS', 'fuck')
+    return os.environ.get('TF_ALIAS', 'alo')
 
 
 @memoize
 def get_valid_history_without_current(command):
     def _not_corrected(history, tf_alias):
-        """Returns all lines from history except that comes before `fuck`."""
+        """Returns all lines from history except that comes before `alo`."""
         previous = None
         for line in history:
             if previous is not None and line != tf_alias:

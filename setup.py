@@ -41,7 +41,7 @@ extras_require = {':python_version<"3.4"': ['pathlib2'],
                   ":sys_platform=='win32'": ['win_unicode_console']}
 
 if sys.platform == "win32":
-    scripts = ['scripts\\fuck.bat', 'scripts\\fuck.ps1']
+    scripts = ['scripts\\alo.bat', 'scripts\\alo.ps1']
     entry_points = {'console_scripts': [
                   'commandhelper = commandhelper.entrypoints.main:main',
                   'commandhelper_firstuse = commandhelper.entrypoints.not_configured:main']}
@@ -49,7 +49,7 @@ else:
     scripts = []
     entry_points = {'console_scripts': [
                   'commandhelper = commandhelper.entrypoints.main:main',
-                  'fuck = commandhelper.entrypoints.not_configured:main']}
+                  'alo = commandhelper.entrypoints.not_configured:main']}
 
 setup(name='commandhelper',
       version=VERSION,

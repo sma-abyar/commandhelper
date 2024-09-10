@@ -19,9 +19,9 @@ class TestPowershell(object):
         assert shell.and_('ls', 'cd') == '(ls) -and (cd)'
 
     def test_app_alias(self, shell):
-        assert 'function fuck' in shell.app_alias('fuck')
-        assert 'function FUCK' in shell.app_alias('FUCK')
-        assert 'commandhelper' in shell.app_alias('fuck')
+        assert 'function alo' in shell.app_alias('alo')
+        assert 'function ALO' in shell.app_alias('ALO')
+        assert 'commandhelper' in shell.app_alias('alo')
 
     def test_how_to_configure(self, shell):
         assert not shell.how_to_configure().can_configure_automatically

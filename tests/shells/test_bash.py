@@ -19,14 +19,14 @@ class TestBash(object):
     @pytest.fixture(autouse=True)
     def shell_aliases(self):
         os.environ['TF_SHELL_ALIASES'] = (
-            'alias fuck=\'eval $(commandhelper $(fc -ln -1))\'\n'
+            'alias alo=\'eval $(commandhelper $(fc -ln -1))\'\n'
             'alias l=\'ls -CF\'\n'
             'alias la=\'ls -A\'\n'
             'alias ll=\'ls -alF\'')
 
     @pytest.mark.parametrize('before, after', [
         ('pwd', 'pwd'),
-        ('fuck', 'eval $(commandhelper $(fc -ln -1))'),
+        ('alo', 'eval $(commandhelper $(fc -ln -1))'),
         ('awk', 'awk'),
         ('ll', 'ls -alF')])
     def test_from_shell(self, before, after, shell):
@@ -42,22 +42,22 @@ class TestBash(object):
         assert shell.or_('ls', 'cd') == 'ls || cd'
 
     def test_get_aliases(self, shell):
-        assert shell.get_aliases() == {'fuck': 'eval $(commandhelper $(fc -ln -1))',
+        assert shell.get_aliases() == {'alo': 'eval $(commandhelper $(fc -ln -1))',
                                        'l': 'ls -CF',
                                        'la': 'ls -A',
                                        'll': 'ls -alF'}
 
     def test_app_alias(self, shell):
-        assert 'fuck () {' in shell.app_alias('fuck')
-        assert 'FUCK () {' in shell.app_alias('FUCK')
-        assert 'commandhelper' in shell.app_alias('fuck')
-        assert 'PYTHONIOENCODING' in shell.app_alias('fuck')
+        assert 'alo () {' in shell.app_alias('alo')
+        assert 'ALO () {' in shell.app_alias('ALO')
+        assert 'commandhelper' in shell.app_alias('alo')
+        assert 'PYTHONIOENCODING' in shell.app_alias('alo')
 
     def test_app_alias_variables_correctly_set(self, shell):
-        alias = shell.app_alias('fuck')
-        assert "fuck () {" in alias
+        alias = shell.app_alias('alo')
+        assert "alo () {" in alias
         assert 'TF_SHELL=bash' in alias
-        assert "TF_ALIAS=fuck" in alias
+        assert "TF_ALIAS=alo" in alias
         assert 'PYTHONIOENCODING=utf-8' in alias
         assert 'TF_SHELL_ALIASES=$(alias)' in alias
 

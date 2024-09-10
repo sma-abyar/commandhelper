@@ -133,14 +133,14 @@ make: *** [target] Error 127
 fatal: bad config file line 1 in /home/martin/.config/git/config
 """),
 
-    FixFileTest('node fuck.js asdf qwer', '/Users/pablo/Workspace/barebones/fuck.js', '2', 5, """
-/Users/pablo/Workspace/barebones/fuck.js:2
+    FixFileTest('node alo.js asdf qwer', '/Users/pablo/Workspace/barebones/alo.js', '2', 5, """
+/Users/pablo/Workspace/barebones/alo.js:2
 conole.log(arg);  // this should read console.log(arg);
 ^
 ReferenceError: conole is not defined
-    at /Users/pablo/Workspace/barebones/fuck.js:2:5
+    at /Users/pablo/Workspace/barebones/alo.js:2:5
     at Array.forEach (native)
-    at Object.<anonymous> (/Users/pablo/Workspace/barebones/fuck.js:1:85)
+    at Object.<anonymous> (/Users/pablo/Workspace/barebones/alo.js:1:85)
     at Module._compile (module.js:460:26)
     at Object.Module._extensions..js (module.js:478:10)
     at Module.load (module.js:355:32)

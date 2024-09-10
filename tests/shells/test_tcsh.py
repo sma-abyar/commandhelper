@@ -14,7 +14,7 @@ class TestTcsh(object):
     def Popen(self, mocker):
         mock = mocker.patch('commandhelper.shells.tcsh.Popen')
         mock.return_value.stdout.read.return_value = (
-            b'fuck\teval $(commandhelper $(fc -ln -1))\n'
+            b'alo\teval $(commandhelper $(fc -ln -1))\n'
             b'l\tls -CF\n'
             b'la\tls -A\n'
             b'll\tls -alF')
@@ -22,7 +22,7 @@ class TestTcsh(object):
 
     @pytest.mark.parametrize('before, after', [
         ('pwd', 'pwd'),
-        ('fuck', 'eval $(commandhelper $(fc -ln -1))'),
+        ('alo', 'eval $(commandhelper $(fc -ln -1))'),
         ('awk', 'awk'),
         ('ll', 'ls -alF')])
     def test_from_shell(self, before, after, shell):
@@ -38,16 +38,16 @@ class TestTcsh(object):
         assert shell.or_('ls', 'cd') == 'ls || cd'
 
     def test_get_aliases(self, shell):
-        assert shell.get_aliases() == {'fuck': 'eval $(commandhelper $(fc -ln -1))',
+        assert shell.get_aliases() == {'alo': 'eval $(commandhelper $(fc -ln -1))',
                                        'l': 'ls -CF',
                                        'la': 'ls -A',
                                        'll': 'ls -alF'}
 
     def test_app_alias(self, shell):
-        assert 'setenv TF_SHELL tcsh' in shell.app_alias('fuck')
-        assert 'alias fuck' in shell.app_alias('fuck')
-        assert 'alias FUCK' in shell.app_alias('FUCK')
-        assert 'commandhelper' in shell.app_alias('fuck')
+        assert 'setenv TF_SHELL tcsh' in shell.app_alias('alo')
+        assert 'alias alo' in shell.app_alias('alo')
+        assert 'alias ALO' in shell.app_alias('ALO')
+        assert 'commandhelper' in shell.app_alias('alo')
 
     def test_get_history(self, history_lines, shell):
         history_lines(['ls', 'rm'])

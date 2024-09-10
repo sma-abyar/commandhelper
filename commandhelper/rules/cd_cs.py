@@ -4,7 +4,7 @@
 # Due to the proximity of the keys - d and s - this seems like a common typo
 # ~ > cs /etc/
 # cs: command not found
-# ~ > fuck
+# ~ > alo
 # cd /etc/ [enter/↑/↓/ctrl+c]
 # /etc >
 

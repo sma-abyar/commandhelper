@@ -17,7 +17,7 @@ def test_get_alias(monkeypatch, mocker, py2,
     monkeypatch.setattr('six.PY2', py2)
     args = Mock(
         enable_experimental_instant_mode=enable_experimental_instant_mode,
-        alias='fuck', )
+        alias='alo', )
     mocker.patch('commandhelper.entrypoints.alias.which', return_value=which)
     shell = Mock(app_alias=lambda _: 'app_alias',
                  instant_mode_alias=lambda _: 'instant_mode_alias')

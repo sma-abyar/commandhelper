@@ -32,10 +32,10 @@ class TestCorrectedCommand(object):
     @pytest.mark.parametrize('script, printed, override_settings', [
         ('git branch', 'git branch', {'repeat': False, 'debug': False}),
         ('git brunch',
-         "git brunch || fuck --repeat --force-command 'git brunch'",
+         "git brunch || alo --repeat --force-command 'git brunch'",
          {'repeat': True, 'debug': False}),
         ('git brunch',
-         "git brunch || fuck --repeat --debug --force-command 'git brunch'",
+         "git brunch || alo --repeat --debug --force-command 'git brunch'",
          {'repeat': True, 'debug': True})])
     def test_run(self, capsys, settings, script, printed, override_settings):
         settings.update(override_settings)

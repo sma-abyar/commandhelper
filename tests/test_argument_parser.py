@@ -15,9 +15,9 @@ def _args(**override):
 
 @pytest.mark.parametrize('argv, result', [
     (['commandhelper'], _args()),
-    (['commandhelper', '-a'], _args(alias='fuck')),
+    (['commandhelper', '-a'], _args(alias='alo')),
     (['commandhelper', '--alias', '--enable-experimental-instant-mode'],
-     _args(alias='fuck', enable_experimental_instant_mode=True)),
+     _args(alias='alo', enable_experimental_instant_mode=True)),
     (['commandhelper', '-a', 'fix'], _args(alias='fix')),
     (['commandhelper', 'git', 'branch', ARGUMENT_PLACEHOLDER, '-y'],
      _args(command=['git', 'branch'], yes=True)),

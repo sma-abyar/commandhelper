@@ -25,11 +25,11 @@ class TestGeneric(object):
         assert shell.get_aliases() == {}
 
     def test_app_alias(self, shell):
-        assert 'alias fuck' in shell.app_alias('fuck')
-        assert 'alias FUCK' in shell.app_alias('FUCK')
-        assert 'commandhelper' in shell.app_alias('fuck')
-        assert 'TF_ALIAS=fuck PYTHONIOENCODING' in shell.app_alias('fuck')
-        assert 'PYTHONIOENCODING=utf-8 commandhelper' in shell.app_alias('fuck')
+        assert 'alias alo' in shell.app_alias('alo')
+        assert 'alias ALO' in shell.app_alias('ALO')
+        assert 'commandhelper' in shell.app_alias('alo')
+        assert 'TF_ALIAS=alo PYTHONIOENCODING' in shell.app_alias('alo')
+        assert 'PYTHONIOENCODING=utf-8 commandhelper' in shell.app_alias('alo')
 
     def test_get_history(self, history_lines, shell):
         history_lines(['ls', 'rm'])

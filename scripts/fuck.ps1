@@ -1,5 +1,5 @@
-if ((Get-Command "fuck").CommandType -eq "Function") {
-	fuck @args;
+if ((Get-Command "alo").CommandType -eq "Function") {
+	alo @args;
 	[Console]::ResetColor()
 	exit
 }
@@ -13,10 +13,10 @@ if ((Get-Content $PROFILE -Raw -ErrorAction Ignore) -like "*commandhelper*") {
 	Write-Output $script | Add-Content $PROFILE
 }
 
-"  - Adding fuck() function to current session..."
+"  - Adding alo() function to current session..."
 $env:PYTHONIOENCODING='utf-8'
-iex "$($(commandhelper --alias).Replace("function fuck", "function global:fuck"))"
+iex "$($(commandhelper --alias).Replace("function alo", "function global:alo"))"
 
-"  - Invoking fuck()`n"
-fuck @args;
+"  - Invoking alo()`n"
+alo @args;
 [Console]::ResetColor()

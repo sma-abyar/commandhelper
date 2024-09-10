@@ -16,7 +16,7 @@ More examples:
 E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
 E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
 
-➜ fuck
+➜ alo
 sudo apt-get install vim [enter/↑/↓/ctrl+c]
 [sudo] password for sma-abyar:
 Reading package lists... Done
@@ -31,7 +31,7 @@ To push the current branch and set the remote as upstream, use
     git push --set-upstream origin master
 
 
-➜ fuck
+➜ alo
 git push --set-upstream origin master [enter/↑/↓/ctrl+c]
 Counting objects: 9, done.
 ...
@@ -44,7 +44,7 @@ No command 'puthon' found, did you mean:
  Command 'python' from package 'python3' (main)
 zsh: command not found: puthon
 
-➜ fuck
+➜ alo
 python [enter/↑/↓/ctrl+c]
 Python 3.4.2 (default, Oct  8 2014, 13:08:17)
 ...
@@ -57,7 +57,7 @@ git: 'brnch' is not a git command. See 'git --help'.
 Did you mean this?
     branch
 
-➜ fuck
+➜ alo
 git branch [enter/↑/↓/ctrl+c]
 * master
 ```
@@ -69,7 +69,7 @@ git branch [enter/↑/↓/ctrl+c]
 Did you mean this?
          repl
 
-➜ fuck
+➜ alo
 lein repl [enter/↑/↓/ctrl+c]
 nREPL server started on port 54848 on host 127.0.0.1 - nrepl://127.0.0.1:54848
 REPL-y 0.3.1
@@ -84,7 +84,7 @@ If you're not afraid of blindly running corrected commands, the
 E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
 E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
 
-➜ fuck
+➜ alo
 sudo apt-get install vim
 [sudo] password for sma-abyar:
 Reading package lists... Done
@@ -157,7 +157,7 @@ It is recommended that you place this command in your `.bash_profile`,
 ```bash
 eval $(commandhelper --alias)
 # You can use whatever you want as an alias, like for Mondays:
-eval $(commandhelper --alias FUCK)
+eval $(commandhelper --alias ALO)
 ```
 
 [Or in your shell config (Bash, Zsh, Fish, Powershell, tcsh).](https://github.com/sma-abyar/commandhelper/wiki/Shell-aliases)
@@ -168,13 +168,13 @@ available, run `source ~/.bashrc` (or your shell config file like `.zshrc`).
 To run fixed commands without confirmation, use the `--yeah` option (or just `-y` for short, or `--hard` if you're especially frustrated):
 
 ```bash
-fuck --yeah
+alo --yeah
 ```
 
 To fix commands recursively until succeeding, use the `-r` option:
 
 ```bash
-fuck -r
+alo -r
 ```
 
 ##### [Back to Contents](#contents)
