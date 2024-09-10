@@ -123,28 +123,28 @@ On Ubuntu / Mint, install *Command Helper* with the following commands:
 ```bash
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
-pip3 install commandhelper --user
+pip3 install --user install git+https://github.com/sma-abyar/commandhelper
 ```
 
 On FreeBSD, install *Command Helper* with the following commands:
 ```bash
-pkg install commandhelper
+pkg install git+https://github.com/sma-abyar/commandhelper
 ```
 
 On ChromeOS, install *Command Helper* using [chromebrew](https://github.com/skycocker/chromebrew) with the following command:
 ```bash
-crew install commandhelper
+crew install git+https://github.com/sma-abyar/commandhelper
 ```
 
 On Arch based systems, install *Command Helper* with the following command:
 ```
-sudo pacman -S commandhelper
+sudo pacman -S git+https://github.com/sma-abyar/commandhelper
 ```
 
 On other systems, install *Command Helper*  by using `pip`:
 
 ```bash
-pip install commandhelper
+pip install git+https://github.com/sma-abyar/commandhelper
 ```
 
 [Alternatively, you may use an OS package manager (OS X, Ubuntu, Arch).](https://github.com/sma-abyar/commandhelper/wiki/Installation)
@@ -181,7 +181,7 @@ alo -r
 ## Updating
 
 ```bash
-pip3 install commandhelper --upgrade
+pip3 install git+https://github.com/sma-abyar/commandhelper --upgrade
 ```
 
 **Note: Alias functionality was changed in v1.34 of *Command Helper***
