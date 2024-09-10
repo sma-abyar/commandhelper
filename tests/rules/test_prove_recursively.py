@@ -9,7 +9,7 @@ Result: NOTESTS'''
 
 @pytest.fixture
 def isdir(mocker):
-    return mocker.patch('thefuck.rules.prove_recursively'
+    return mocker.patch('commandhelper.rules.prove_recursively'
                         '.os.path.isdir')
 
 

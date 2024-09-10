@@ -122,7 +122,7 @@ Run gradlew tasks to get a list of available tasks. Run with --stacktrace option
 
 @pytest.fixture(autouse=True)
 def tasks(mocker):
-    patch = mocker.patch('thefuck.rules.gradle_no_task.Popen')
+    patch = mocker.patch('commandhelper.rules.gradle_no_task.Popen')
     patch.return_value.stdout = BytesIO(gradle_tasks)
     return patch
 

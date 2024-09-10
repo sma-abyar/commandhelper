@@ -4,8 +4,8 @@ Rule: git_clone_missing
 Correct missing `git clone` command when pasting a git URL
 
 ```sh
->>> https://github.com/nvbn/thefuck.git
-git clone https://github.com/nvbn/thefuck.git
+>>> https://github.com/sma-abyar/commandhelper.git
+git clone https://github.com/sma-abyar/commandhelper.git
 ```
 
 Author: Miguel Guthridge

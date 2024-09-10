@@ -8,7 +8,7 @@ output = 'sudo: {}: command not found'
 
 @pytest.fixture(autouse=True)
 def which(mocker):
-    return mocker.patch('thefuck.rules.sudo_command_from_user_path.which',
+    return mocker.patch('commandhelper.rules.sudo_command_from_user_path.which',
                         return_value='/usr/bin/app')
 
 

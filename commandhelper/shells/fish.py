@@ -41,7 +41,7 @@ class Fish(Generic):
     friendly_name = 'Fish Shell'
 
     def _get_overridden_aliases(self):
-        overridden = os.environ.get('THEFUCK_OVERRIDDEN_ALIASES',
+        overridden = os.environ.get('commandhelper_OVERRIDDEN_ALIASES',
                                     os.environ.get('TF_OVERRIDDEN_ALIASES', ''))
         default = {'cd', 'grep', 'ls', 'man', 'open'}
         for alias in overridden.split(','):
@@ -59,7 +59,7 @@ class Fish(Generic):
         return ('function {0} -d "Correct your previous console command"\n'
                 '  set -l fucked_up_command $history[1]\n'
                 '  env TF_SHELL=fish TF_ALIAS={0} PYTHONIOENCODING=utf-8'
-                ' thefuck $fucked_up_command {2} $argv | read -l unfucked_command\n'
+                ' commandhelper $fucked_up_command {2} $argv | read -l unfucked_command\n'
                 '  if [ "$unfucked_command" != "" ]\n'
                 '    eval $unfucked_command\n{1}'
                 '  end\n'
@@ -102,7 +102,7 @@ class Fish(Generic):
 
     def how_to_configure(self):
         return self._create_shell_configuration(
-            content=u"thefuck --alias | source",
+            content=u"commandhelper --alias | source",
             path='~/.config/fish/config.fish',
             reload='fish')
 

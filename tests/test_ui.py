@@ -11,7 +11,7 @@ from commandhelper import const
 def patch_get_key(monkeypatch):
     def patch(vals):
         vals = iter(vals)
-        monkeypatch.setattr('thefuck.ui.get_key', lambda: next(vals))
+        monkeypatch.setattr('commandhelper.ui.get_key', lambda: next(vals))
 
     return patch
 

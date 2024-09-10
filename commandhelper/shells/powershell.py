@@ -10,7 +10,7 @@ class Powershell(Generic):
         return 'function ' + alias_name + ' {\n' \
                '    $history = (Get-History -Count 1).CommandLine;\n' \
                '    if (-not [string]::IsNullOrWhiteSpace($history)) {\n' \
-               '        $fuck = $(thefuck $args $history);\n' \
+               '        $fuck = $(commandhelper $args $history);\n' \
                '        if (-not [string]::IsNullOrWhiteSpace($fuck)) {\n' \
                '            if ($fuck.StartsWith("echo")) { $fuck = $fuck.Substring(5); }\n' \
                '            else { iex "$fuck"; }\n' \
@@ -24,7 +24,7 @@ class Powershell(Generic):
 
     def how_to_configure(self):
         return ShellConfiguration(
-            content=u'iex "$(thefuck --alias)"',
+            content=u'iex "$(commandhelper --alias)"',
             path='$profile',
             reload='. $profile',
             can_configure_automatically=False)

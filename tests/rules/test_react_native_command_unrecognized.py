@@ -7,7 +7,7 @@ from commandhelper.types import Command
 output = "Unrecognized command '{}'".format
 
 stdout = b'''
-Scanning 615 folders for symlinks in /home/nvbn/work/zcho/BookkaWebView/node_modules (6ms)
+Scanning 615 folders for symlinks in /home/sma-abyar/work/zcho/BookkaWebView/node_modules (6ms)
 
   Usage: react-native [options] [command]
 
@@ -58,6 +58,6 @@ def test_not_match(command):
      'react-native log-android -f')])
 def test_get_new_command(mocker, command, result):
     patch = mocker.patch(
-        'thefuck.rules.react_native_command_unrecognized.Popen')
+        'commandhelper.rules.react_native_command_unrecognized.Popen')
     patch.return_value.stdout = BytesIO(stdout)
     assert get_new_command(command)[0] == result

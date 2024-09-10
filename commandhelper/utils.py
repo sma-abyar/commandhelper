@@ -119,7 +119,7 @@ def get_all_executables():
             return fallback
 
     tf_alias = get_alias()
-    tf_entry_points = ['thefuck', 'fuck']
+    tf_entry_points = ['commandhelper', 'fuck']
 
     bins = [exe.name.decode('utf8') if six.PY2 else exe.name
             for path in os.environ.get('PATH', '').split(os.pathsep)
@@ -211,7 +211,7 @@ class Cache(object):
 
     def _setup_db(self):
         cache_dir = self._get_cache_dir()
-        cache_path = Path(cache_dir).joinpath('thefuck').as_posix()
+        cache_path = Path(cache_dir).joinpath('commandhelper').as_posix()
 
         try:
             self._db = shelve.open(cache_path)
@@ -298,11 +298,11 @@ def get_installation_version():
     try:
         from importlib.metadata import version
 
-        return version('thefuck')
+        return version('commandhelper')
     except ImportError:
         import pkg_resources
 
-        return pkg_resources.require('thefuck')[0].version
+        return pkg_resources.require('commandhelper')[0].version
 
 
 def get_alias():

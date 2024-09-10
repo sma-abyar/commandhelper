@@ -5,7 +5,7 @@ from commandhelper.types import Command
 
 @pytest.fixture(autouse=True)
 def path_exists(mocker):
-    return mocker.patch('thefuck.rules.git_add.Path.exists',
+    return mocker.patch('commandhelper.rules.git_add.Path.exists',
                         return_value=True)
 
 

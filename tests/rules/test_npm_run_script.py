@@ -25,7 +25,7 @@ npm help <term>  search for help on <term>
 npm help npm     involved overview
 
 Specify configs in the ini-formatted file:
-    /home/nvbn/.npmrc
+    /home/sma-abyar/.npmrc
 or on the command line via: npm <command> --key value
 Config info can be viewed via: npm help config
 
@@ -49,7 +49,7 @@ available via `npm run-script`:
 
 @pytest.fixture(autouse=True)
 def run_script(mocker):
-    patch = mocker.patch('thefuck.specific.npm.Popen')
+    patch = mocker.patch('commandhelper.specific.npm.Popen')
     patch.return_value.stdout = BytesIO(run_script_stdout)
     return patch.return_value
 

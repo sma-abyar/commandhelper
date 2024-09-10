@@ -43,9 +43,9 @@ Traceback (most recent call last):
     "__main__", mod_spec)
   File "/usr/lib/python3.5/runpy.py", line 85, in _run_code
     exec(code, run_globals)
-  File "/home/nvbn/exp/code_view/server/code_view/main.py", line 14, in <module>
+  File "/home/sma-abyar/exp/code_view/server/code_view/main.py", line 14, in <module>
     web.run_app(app)
-  File "/home/nvbn/.virtualenvs/code_view/lib/python3.5/site-packages/aiohttp/web.py", line 310, in run_app
+  File "/home/sma-abyar/.virtualenvs/code_view/lib/python3.5/site-packages/aiohttp/web.py", line 310, in run_app
     backlog=backlog))
   File "/usr/lib/python3.5/asyncio/base_events.py", line 373, in run_until_complete
     return future.result()
@@ -57,18 +57,18 @@ Traceback (most recent call last):
     % (sa, err.strerror.lower()))
 OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 8080): address already in use
 Task was destroyed but it is pending!
-task: <Task pending coro=<RedisProtocol._reader_coroutine() running at /home/nvbn/.virtualenvs/code_view/lib/python3.5/site-packages/asyncio_redis/protocol.py:921> wait_for=<Future pending cb=[Task._wakeup()]>>
+task: <Task pending coro=<RedisProtocol._reader_coroutine() running at /home/sma-abyar/.virtualenvs/code_view/lib/python3.5/site-packages/asyncio_redis/protocol.py:921> wait_for=<Future pending cb=[Task._wakeup()]>>
     '''
 ]
 
 lsof_stdout = b'''COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-node    18233 nvbn   16u  IPv4 557134      0t0  TCP localhost:http-alt (LISTEN)
+node    18233 sma-abyar   16u  IPv4 557134      0t0  TCP localhost:http-alt (LISTEN)
 '''
 
 
 @pytest.fixture(autouse=True)
 def lsof(mocker):
-    patch = mocker.patch('thefuck.rules.port_already_in_use.Popen')
+    patch = mocker.patch('commandhelper.rules.port_already_in_use.Popen')
     patch.return_value.stdout = BytesIO(lsof_stdout)
     return patch
 

@@ -87,7 +87,7 @@ yarn_help_stdout = b'''
 
 @pytest.fixture(autouse=True)
 def yarn_help(mocker):
-    patch = mocker.patch('thefuck.rules.yarn_command_not_found.Popen')
+    patch = mocker.patch('commandhelper.rules.yarn_command_not_found.Popen')
     patch.return_value.stdout = BytesIO(yarn_help_stdout)
     return patch
 

@@ -3,23 +3,23 @@ from commandhelper.rules.git_clone_missing import match, get_new_command
 from commandhelper.types import Command
 
 valid_urls = [
-    'https://github.com/nvbn/thefuck.git',
-    'https://github.com/nvbn/thefuck',
-    'http://github.com/nvbn/thefuck.git',
-    'git@github.com:nvbn/thefuck.git',
-    'git@github.com:nvbn/thefuck',
-    'ssh://git@github.com:nvbn/thefuck.git',
+    'https://github.com/sma-abyar/commandhelper.git',
+    'https://github.com/sma-abyar/commandhelper',
+    'http://github.com/sma-abyar/commandhelper.git',
+    'git@github.com:sma-abyar/commandhelper.git',
+    'git@github.com:sma-abyar/commandhelper',
+    'ssh://git@github.com:sma-abyar/commandhelper.git',
 ]
 invalid_urls = [
     '',  # No command
     'notacommand',  # Command not found
-    'ssh git@github.com:nvbn/thefrick.git',  # ssh command, not a git clone
+    'ssh git@github.com:sma-abyar/thefrick.git',  # ssh command, not a git clone
     'git clone foo',  # Valid clone
-    'git clone https://github.com/nvbn/thefuck.git',  # Full command
-    'github.com/nvbn/thefuck.git',  # Missing protocol
-    'github.com:nvbn/thefuck.git',  # SSH missing username
-    'git clone git clone ssh://git@github.com:nvbn/thefrick.git',  # 2x clone
-    'https:/github.com/nvbn/thefuck.git'  # Bad protocol
+    'git clone https://github.com/sma-abyar/commandhelper.git',  # Full command
+    'github.com/sma-abyar/commandhelper.git',  # Missing protocol
+    'github.com:sma-abyar/commandhelper.git',  # SSH missing username
+    'git clone git clone ssh://git@github.com:sma-abyar/thefrick.git',  # 2x clone
+    'https:/github.com/sma-abyar/commandhelper.git'  # Bad protocol
 ]
 outputs = [
     'No such file or directory',

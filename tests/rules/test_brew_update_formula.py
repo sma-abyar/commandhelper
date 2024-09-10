@@ -4,11 +4,11 @@ from commandhelper.rules.brew_update_formula import get_new_command, match
 
 
 output = ("Error: This command updates brew itself, and does not take formula"
-          " names.\nUse `brew upgrade thefuck`.")
+          " names.\nUse `brew upgrade commandhelper`.")
 
 
 def test_match():
-    command = Command('brew update thefuck', output)
+    command = Command('brew update commandhelper', output)
     assert match(command)
 
 

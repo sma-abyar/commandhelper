@@ -11,7 +11,7 @@ patterns = (
     '^    at {file}:{line}:{col}',
     # cargo:
     '^   {file}:{line}:{col}',
-    # python, thefuck:
+    # python, commandhelper:
     '^  File "{file}", line {line}',
     # awk:
     '^awk: {file}:{line}:',

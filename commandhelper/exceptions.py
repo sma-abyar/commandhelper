@@ -1,5 +1,5 @@
 class EmptyCommand(Exception):
-    """Raised when empty command passed to `thefuck`."""
+    """Raised when empty command passed to `commandhelper`."""
 
 
 class NoRuleMatched(Exception):

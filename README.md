@@ -18,7 +18,7 @@ E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
 
 ➜ fuck
 sudo apt-get install vim [enter/↑/↓/ctrl+c]
-[sudo] password for nvbn:
+[sudo] password for sma-abyar:
 Reading package lists... Done
 ...
 ```
@@ -86,7 +86,7 @@ E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
 
 ➜ fuck
 sudo apt-get install vim
-[sudo] password for nvbn:
+[sudo] password for sma-abyar:
 Reading package lists... Done
 ...
 ```
@@ -117,50 +117,50 @@ Reading package lists... Done
 On macOS or Linux, you can install *The Fuck* via [Homebrew][homebrew]:
 
 ```bash
-brew install thefuck
+brew install commandhelper
 ```
 
 On Ubuntu / Mint, install *The Fuck* with the following commands:
 ```bash
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
-pip3 install thefuck --user
+pip3 install commandhelper --user
 ```
 
 On FreeBSD, install *The Fuck* with the following commands:
 ```bash
-pkg install thefuck
+pkg install commandhelper
 ```
 
 On ChromeOS, install *The Fuck* using [chromebrew](https://github.com/skycocker/chromebrew) with the following command:
 ```bash
-crew install thefuck
+crew install commandhelper
 ```
 
 On Arch based systems, install *The Fuck* with the following command:
 ```
-sudo pacman -S thefuck
+sudo pacman -S commandhelper
 ```
 
 On other systems, install *The Fuck*  by using `pip`:
 
 ```bash
-pip install thefuck
+pip install commandhelper
 ```
 
-[Alternatively, you may use an OS package manager (OS X, Ubuntu, Arch).](https://github.com/nvbn/thefuck/wiki/Installation)
+[Alternatively, you may use an OS package manager (OS X, Ubuntu, Arch).](https://github.com/sma-abyar/commandhelper/wiki/Installation)
 
 <a href='#manual-installation' name='manual-installation'>#</a>
 It is recommended that you place this command in your `.bash_profile`,
 `.bashrc`, `.zshrc` or other startup script:
 
 ```bash
-eval $(thefuck --alias)
+eval $(commandhelper --alias)
 # You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias FUCK)
+eval $(commandhelper --alias FUCK)
 ```
 
-[Or in your shell config (Bash, Zsh, Fish, Powershell, tcsh).](https://github.com/nvbn/thefuck/wiki/Shell-aliases)
+[Or in your shell config (Bash, Zsh, Fish, Powershell, tcsh).](https://github.com/sma-abyar/commandhelper/wiki/Shell-aliases)
 
 Changes are only available in a new shell session. To make changes immediately
 available, run `source ~/.bashrc` (or your shell config file like `.zshrc`).
@@ -182,7 +182,7 @@ fuck -r
 ## Updating
 
 ```bash
-pip3 install thefuck --upgrade
+pip3 install commandhelper --upgrade
 ```
 
 **Note: Alias functionality was changed in v1.34 of *The Fuck***
@@ -190,7 +190,7 @@ pip3 install thefuck --upgrade
 ## Uninstall
 
 To remove *The Fuck*, reverse the installation process:
-- erase or comment *thefuck* alias line from your Bash, Zsh, Fish, Powershell, tcsh, ... shell config
+- erase or comment *commandhelper* alias line from your Bash, Zsh, Fish, Powershell, tcsh, ... shell config
 - use your package manager (brew, pip3, pkg, crew, pip) to uninstall the binaries
 
 ## How it works
@@ -383,7 +383,7 @@ default:
 ## Creating your own rules
 
 To add your own rule, create a file named `your-rule-name.py`
-in `~/.config/thefuck/rules`. The rule file must contain two functions:
+in `~/.config/commandhelper/rules`. The rule file must contain two functions:
 
 ```python
 match(command: Command) -> bool
@@ -402,9 +402,9 @@ Your rule should not change `Command`.
 
 
 **Rules api changed in 3.0:** To access a rule's settings, import it with
- `from thefuck.conf import settings`
+ `from commandhelper.conf import settings`
 
-`settings` is a special object assembled from `~/.config/thefuck/settings.py`,
+`settings` is a special object assembled from `~/.config/commandhelper/settings.py`,
 and values from env ([see more below](#settings)).
 
 A simple example rule for running a script with `sudo`:
@@ -429,18 +429,18 @@ priority = 1000  # Lower first, default is 1000
 requires_output = True
 ```
 
-[More examples of rules](https://github.com/nvbn/thefuck/tree/master/thefuck/rules),
-[utility functions for rules](https://github.com/nvbn/thefuck/tree/master/thefuck/utils.py),
-[app/os-specific helpers](https://github.com/nvbn/thefuck/tree/master/thefuck/specific/).
+[More examples of rules](https://github.com/sma-abyar/commandhelper/tree/master/commandhelper/rules),
+[utility functions for rules](https://github.com/sma-abyar/commandhelper/tree/master/commandhelper/utils.py),
+[app/os-specific helpers](https://github.com/sma-abyar/commandhelper/tree/master/commandhelper/specific/).
 
 ##### [Back to Contents](#contents)
 
 ## Settings
 
-Several *The Fuck* parameters can be changed in the file `$XDG_CONFIG_HOME/thefuck/settings.py`
+Several *The Fuck* parameters can be changed in the file `$XDG_CONFIG_HOME/commandhelper/settings.py`
 (`$XDG_CONFIG_HOME` defaults to `~/.config`):
 
-* `rules` &ndash; list of enabled rules, by default `thefuck.const.DEFAULT_RULES`;
+* `rules` &ndash; list of enabled rules, by default `commandhelper.const.DEFAULT_RULES`;
 * `exclude_rules` &ndash; list of disabled rules, by default `[]`;
 * `require_confirmation` &ndash; requires confirmation before running new command, by default `True`;
 * `wait_command` &ndash; the max amount of time in seconds for getting previous command output;
@@ -472,32 +472,32 @@ num_close_matches = 5
 
 Or via environment variables:
 
-* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT_RULES:rm_root` or `sudo:no_command`;
-* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`;
-* `THEFUCK_REQUIRE_CONFIRMATION` &ndash; require confirmation before running new command, `true/false`;
-* `THEFUCK_WAIT_COMMAND` &ndash; the max amount of time in seconds for getting previous command output;
-* `THEFUCK_NO_COLORS` &ndash; disable colored output, `true/false`;
-* `THEFUCK_PRIORITY` &ndash; priority of the rules, like `no_command=9999:apt_get=100`,
+* `commandhelper_RULES` &ndash; list of enabled rules, like `DEFAULT_RULES:rm_root` or `sudo:no_command`;
+* `commandhelper_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`;
+* `commandhelper_REQUIRE_CONFIRMATION` &ndash; require confirmation before running new command, `true/false`;
+* `commandhelper_WAIT_COMMAND` &ndash; the max amount of time in seconds for getting previous command output;
+* `commandhelper_NO_COLORS` &ndash; disable colored output, `true/false`;
+* `commandhelper_PRIORITY` &ndash; priority of the rules, like `no_command=9999:apt_get=100`,
 rule with lower `priority` will be matched first;
-* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`;
-* `THEFUCK_HISTORY_LIMIT` &ndash; how many history commands will be scanned, like `2000`;
-* `THEFUCK_ALTER_HISTORY` &ndash; push fixed command to history `true/false`;
-* `THEFUCK_WAIT_SLOW_COMMAND` &ndash; the max amount of time in seconds for getting previous command output if it in `slow_commands` list;
-* `THEFUCK_SLOW_COMMANDS` &ndash; list of slow commands, like `lein:gradle`;
-* `THEFUCK_NUM_CLOSE_MATCHES` &ndash; the maximum number of close matches to suggest, like `5`.
-* `THEFUCK_EXCLUDED_SEARCH_PATH_PREFIXES` &ndash; path prefixes to ignore when searching for commands, by default `[]`.
+* `commandhelper_DEBUG` &ndash; enables debug output, `true/false`;
+* `commandhelper_HISTORY_LIMIT` &ndash; how many history commands will be scanned, like `2000`;
+* `commandhelper_ALTER_HISTORY` &ndash; push fixed command to history `true/false`;
+* `commandhelper_WAIT_SLOW_COMMAND` &ndash; the max amount of time in seconds for getting previous command output if it in `slow_commands` list;
+* `commandhelper_SLOW_COMMANDS` &ndash; list of slow commands, like `lein:gradle`;
+* `commandhelper_NUM_CLOSE_MATCHES` &ndash; the maximum number of close matches to suggest, like `5`.
+* `commandhelper_EXCLUDED_SEARCH_PATH_PREFIXES` &ndash; path prefixes to ignore when searching for commands, by default `[]`.
 
 For example:
 
 ```bash
-export THEFUCK_RULES='sudo:no_command'
-export THEFUCK_EXCLUDE_RULES='git_pull:git_push'
-export THEFUCK_REQUIRE_CONFIRMATION='true'
-export THEFUCK_WAIT_COMMAND=10
-export THEFUCK_NO_COLORS='false'
-export THEFUCK_PRIORITY='no_command=9999:apt_get=100'
-export THEFUCK_HISTORY_LIMIT='2000'
-export THEFUCK_NUM_CLOSE_MATCHES='5'
+export commandhelper_RULES='sudo:no_command'
+export commandhelper_EXCLUDE_RULES='git_pull:git_push'
+export commandhelper_REQUIRE_CONFIRMATION='true'
+export commandhelper_WAIT_COMMAND=10
+export commandhelper_NO_COLORS='false'
+export commandhelper_PRIORITY='no_command=9999:apt_get=100'
+export commandhelper_HISTORY_LIMIT='2000'
+export commandhelper_NUM_CLOSE_MATCHES='5'
 ```
 
 ##### [Back to Contents](#contents)
@@ -505,12 +505,12 @@ export THEFUCK_NUM_CLOSE_MATCHES='5'
 ## Third-party packages with rules
 
 If you'd like to make a specific set of non-public rules, but would still like
-to share them with others, create a package named `thefuck_contrib_*` with
+to share them with others, create a package named `commandhelper_contrib_*` with
 the following structure:
 
 ```
-thefuck_contrib_foo
-  thefuck_contrib_foo
+commandhelper_contrib_foo
+  commandhelper_contrib_foo
     rules
       __init__.py
       *third-party rules*
@@ -531,7 +531,7 @@ then reading the log.
 
 [![gif with instant mode][instant-mode-gif-link]][instant-mode-gif-link]
 
-Currently, instant mode only supports Python 3 with bash or zsh. zsh's autocorrect function also needs to be disabled in order for thefuck to work properly.
+Currently, instant mode only supports Python 3 with bash or zsh. zsh's autocorrect function also needs to be disabled in order for commandhelper to work properly.
 
 To enable instant mode, add `--enable-experimental-instant-mode`
 to the alias initialization in `.bashrc`, `.bash_profile` or `.zshrc`.
@@ -539,7 +539,7 @@ to the alias initialization in `.bashrc`, `.bash_profile` or `.zshrc`.
 For example:
 
 ```bash
-eval $(thefuck --alias --enable-experimental-instant-mode)
+eval $(commandhelper --alias --enable-experimental-instant-mode)
 ```
 
 ##### [Back to Contents](#contents)
@@ -552,15 +552,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 Project License can be found [here](LICENSE.md).
 
 
-[version-badge]:   https://img.shields.io/pypi/v/thefuck.svg?label=version
-[version-link]:    https://pypi.python.org/pypi/thefuck/
-[workflow-badge]:  https://github.com/nvbn/thefuck/workflows/Tests/badge.svg
-[workflow-link]:   https://github.com/nvbn/thefuck/actions?query=workflow%3ATests
-[coverage-badge]:  https://img.shields.io/coveralls/nvbn/thefuck.svg
-[coverage-link]:   https://coveralls.io/github/nvbn/thefuck
+[version-badge]:   https://img.shields.io/pypi/v/commandhelper.svg?label=version
+[version-link]:    https://pypi.python.org/pypi/commandhelper/
+[workflow-badge]:  https://github.com/sma-abyar/commandhelper/workflows/Tests/badge.svg
+[workflow-link]:   https://github.com/sma-abyar/commandhelper/actions?query=workflow%3ATests
+[coverage-badge]:  https://img.shields.io/coveralls/sma-abyar/commandhelper.svg
+[coverage-link]:   https://coveralls.io/github/sma-abyar/commandhelper
 [license-badge]:   https://img.shields.io/badge/license-MIT-007EC7.svg
-[examples-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif
-[instant-mode-gif-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example_instant_mode.gif
+[examples-link]:   https://raw.githubusercontent.com/sma-abyar/commandhelper/master/example.gif
+[instant-mode-gif-link]:   https://raw.githubusercontent.com/sma-abyar/commandhelper/master/example_instant_mode.gif
 [homebrew]:        https://brew.sh/
 
 ##### [Back to Contents](#contents)

@@ -5,7 +5,7 @@ from commandhelper.types import Command
 
 @pytest.fixture
 def isdir(mocker):
-    return mocker.patch('thefuck.rules.cat_dir'
+    return mocker.patch('commandhelper.rules.cat_dir'
                         '.os.path.isdir')
 
 

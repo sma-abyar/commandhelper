@@ -53,13 +53,13 @@ def test_match(command):
         '\nMercurial Distributed SCM\n\nbasic commands:'
     )),
     Command('hg me', (
-        "\nabort: no repository found in './thefuck' (.hg not found)!"
+        "\nabort: no repository found in './commandhelper' (.hg not found)!"
     )),
     Command('hg reb', (
-        "\nabort: no repository found in './thefuck' (.hg not found)!"
+        "\nabort: no repository found in './commandhelper' (.hg not found)!"
     )),
     Command('hg co', (
-        "\nabort: no repository found in './thefuck' (.hg not found)!"
+        "\nabort: no repository found in './commandhelper' (.hg not found)!"
     )),
 ])
 def test_not_match(command):

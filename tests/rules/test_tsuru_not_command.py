@@ -55,7 +55,7 @@ def test_match(command):
         '- ruby20\n'
         '- static\n'
     )),
-    Command('tsuru env-get', 'Error: App thefuck not found.'),
+    Command('tsuru env-get', 'Error: App commandhelper not found.'),
 ])
 def test_not_match(command):
     assert not match(command)

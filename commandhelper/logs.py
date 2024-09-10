@@ -111,7 +111,7 @@ def how_to_configure_alias(configuration_details):
                     bold=color(colorama.Style.BRIGHT),
                     reset=color(colorama.Style.RESET_ALL)))
 
-    print(u'More details - https://github.com/nvbn/thefuck#manual-installation')
+    print(u'More details - https://github.com/sma-abyar/commandhelper#manual-installation')
 
 
 def already_configured(configuration_details):
@@ -134,8 +134,8 @@ def configured_successfully(configuration_details):
             reload=configuration_details.reload))
 
 
-def version(thefuck_version, python_version, shell_info):
+def version(commandhelper_version, python_version, shell_info):
     sys.stderr.write(
-        u'The Fuck {} using Python {} and {}\n'.format(thefuck_version,
+        u'The Fuck {} using Python {} and {}\n'.format(commandhelper_version,
                                                        python_version,
                                                        shell_info))

@@ -1,6 +1,6 @@
-name: thefuck
+name: commandhelper
 version: stable
-version-script: git -C parts/thefuck/build describe --abbrev=0 --tags
+version-script: git -C parts/commandhelper/build describe --abbrev=0 --tags
 summary: Magnificent app which corrects your previous console command.
 description: |
   The Fuck tries to match a rule for the previous command,
@@ -10,8 +10,8 @@ grade: stable
 confinement: classic
 
 apps:
-  thefuck:
-    command: bin/thefuck
+  commandhelper:
+    command: bin/commandhelper
     environment:
         PYTHONIOENCODING: utf-8
   fuck:
@@ -20,6 +20,6 @@ apps:
         PYTHONIOENCODING: utf-8
 
 parts:
-  thefuck:
-    source: https://github.com/nvbn/thefuck.git
+  commandhelper:
+    source: https://github.com/sma-abyar/commandhelper.git
     plugin: python

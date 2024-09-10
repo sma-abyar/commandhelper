@@ -15,7 +15,7 @@ npm ERR! If you need help, you may report this error at:
 npm ERR!     <https://github.com/npm/npm/issues>
 
 npm ERR! Please include the following file with any support request:
-npm ERR!     /home/nvbn/exp/code_view/client_web/npm-debug.log
+npm ERR!     /home/sma-abyar/exp/code_view/client_web/npm-debug.log
 '''.format
 
 run_script_stdout = b'''
@@ -36,7 +36,7 @@ available via `npm run-script`:
 
 @pytest.fixture(autouse=True)
 def run_script(mocker):
-    patch = mocker.patch('thefuck.specific.npm.Popen')
+    patch = mocker.patch('commandhelper.specific.npm.Popen')
     patch.return_value.stdout = BytesIO(run_script_stdout)
     return patch.return_value
 

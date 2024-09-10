@@ -18,10 +18,10 @@ def test_get_alias(monkeypatch, mocker, py2,
     args = Mock(
         enable_experimental_instant_mode=enable_experimental_instant_mode,
         alias='fuck', )
-    mocker.patch('thefuck.entrypoints.alias.which', return_value=which)
+    mocker.patch('commandhelper.entrypoints.alias.which', return_value=which)
     shell = Mock(app_alias=lambda _: 'app_alias',
                  instant_mode_alias=lambda _: 'instant_mode_alias')
-    monkeypatch.setattr('thefuck.entrypoints.alias.shell', shell)
+    monkeypatch.setattr('commandhelper.entrypoints.alias.shell', shell)
 
     alias = _get_alias(args)
     if is_instant:
@@ -31,8 +31,8 @@ def test_get_alias(monkeypatch, mocker, py2,
 
 
 def test_print_alias(mocker):
-    settings_mock = mocker.patch('thefuck.entrypoints.alias.settings')
-    _get_alias_mock = mocker.patch('thefuck.entrypoints.alias._get_alias')
+    settings_mock = mocker.patch('commandhelper.entrypoints.alias.settings')
+    _get_alias_mock = mocker.patch('commandhelper.entrypoints.alias._get_alias')
     known_args = Mock()
     print_alias(known_args)
     settings_mock.init.assert_called_once_with(known_args)

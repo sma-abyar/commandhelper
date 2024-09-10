@@ -46,21 +46,21 @@ DEFAULT_SETTINGS = {'rules': DEFAULT_RULES,
                     'env': {'LC_ALL': 'C', 'LANG': 'C', 'GIT_TRACE': '1'},
                     'excluded_search_path_prefixes': []}
 
-ENV_TO_ATTR = {'THEFUCK_RULES': 'rules',
-               'THEFUCK_EXCLUDE_RULES': 'exclude_rules',
-               'THEFUCK_WAIT_COMMAND': 'wait_command',
-               'THEFUCK_REQUIRE_CONFIRMATION': 'require_confirmation',
-               'THEFUCK_NO_COLORS': 'no_colors',
-               'THEFUCK_DEBUG': 'debug',
-               'THEFUCK_PRIORITY': 'priority',
-               'THEFUCK_HISTORY_LIMIT': 'history_limit',
-               'THEFUCK_ALTER_HISTORY': 'alter_history',
-               'THEFUCK_WAIT_SLOW_COMMAND': 'wait_slow_command',
-               'THEFUCK_SLOW_COMMANDS': 'slow_commands',
-               'THEFUCK_REPEAT': 'repeat',
-               'THEFUCK_INSTANT_MODE': 'instant_mode',
-               'THEFUCK_NUM_CLOSE_MATCHES': 'num_close_matches',
-               'THEFUCK_EXCLUDED_SEARCH_PATH_PREFIXES': 'excluded_search_path_prefixes'}
+ENV_TO_ATTR = {'commandhelper_RULES': 'rules',
+               'commandhelper_EXCLUDE_RULES': 'exclude_rules',
+               'commandhelper_WAIT_COMMAND': 'wait_command',
+               'commandhelper_REQUIRE_CONFIRMATION': 'require_confirmation',
+               'commandhelper_NO_COLORS': 'no_colors',
+               'commandhelper_DEBUG': 'debug',
+               'commandhelper_PRIORITY': 'priority',
+               'commandhelper_HISTORY_LIMIT': 'history_limit',
+               'commandhelper_ALTER_HISTORY': 'alter_history',
+               'commandhelper_WAIT_SLOW_COMMAND': 'wait_slow_command',
+               'commandhelper_SLOW_COMMANDS': 'slow_commands',
+               'commandhelper_REPEAT': 'repeat',
+               'commandhelper_INSTANT_MODE': 'instant_mode',
+               'commandhelper_NUM_CLOSE_MATCHES': 'num_close_matches',
+               'commandhelper_EXCLUDED_SEARCH_PATH_PREFIXES': 'excluded_search_path_prefixes'}
 
 SETTINGS_HEADER = u"""# The Fuck settings file
 #
@@ -69,12 +69,12 @@ SETTINGS_HEADER = u"""# The Fuck settings file
 # rules = ['cd_parent', 'git_push', 'python_command', 'sudo']
 #
 # The default values are as follows. Uncomment and change to fit your needs.
-# See https://github.com/nvbn/thefuck#settings for more information.
+# See https://github.com/sma-abyar/commandhelper#settings for more information.
 #
 
 """
 
-ARGUMENT_PLACEHOLDER = 'THEFUCK_ARGUMENT_PLACEHOLDER'
+ARGUMENT_PLACEHOLDER = 'commandhelper_ARGUMENT_PLACEHOLDER'
 
 CONFIGURATION_TIMEOUT = 60
 
