@@ -5,10 +5,10 @@ from subprocess import PIPE, STDOUT
 from mock import Mock
 import pytest
 from tests.utils import CorrectedCommand, Rule
-from thefuck import const
-from thefuck.exceptions import EmptyCommand
-from thefuck.system import Path
-from thefuck.types import Command
+from commandhelper import const
+from commandhelper.exceptions import EmptyCommand
+from commandhelper.system import Path
+from commandhelper.types import Command
 
 
 class TestCorrectedCommand(object):

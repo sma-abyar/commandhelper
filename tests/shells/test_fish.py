@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from thefuck.const import ARGUMENT_PLACEHOLDER
-from thefuck.shells import Fish
+from commandhelper.const import ARGUMENT_PLACEHOLDER
+from commandhelper.shells import Fish
 
 
 @pytest.mark.usefixtures('isfile', 'no_memoize', 'no_cache')

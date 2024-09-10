@@ -1,7 +1,7 @@
 import pytest
 
-from thefuck.types import Command
-from thefuck.rules.tsuru_not_command import match, get_new_command
+from commandhelper.types import Command
+from commandhelper.rules.tsuru_not_command import match, get_new_command
 
 
 @pytest.mark.parametrize('command', [

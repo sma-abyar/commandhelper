@@ -2,8 +2,8 @@
 
 from io import BytesIO
 import pytest
-from thefuck.types import Command
-from thefuck.rules.grunt_task_not_found import match, get_new_command
+from commandhelper.types import Command
+from commandhelper.rules.grunt_task_not_found import match, get_new_command
 
 output = '''
 Warning: Task "{}" not found. Use --force to continue.

@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.adb_unknown_command import match, get_new_command
-from thefuck.types import Command
+from commandhelper.rules.adb_unknown_command import match, get_new_command
+from commandhelper.types import Command
 
 
 @pytest.fixture

@@ -2,7 +2,7 @@
 
 import os
 import pytest
-from thefuck.shells.zsh import Zsh
+from commandhelper.shells.zsh import Zsh
 
 
 @pytest.mark.usefixtures('isfile', 'no_memoize', 'no_cache')

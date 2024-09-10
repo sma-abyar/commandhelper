@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.tsuru_login import match, get_new_command
-from thefuck.types import Command
+from commandhelper.rules.tsuru_login import match, get_new_command
+from commandhelper.types import Command
 
 
 error_msg = (

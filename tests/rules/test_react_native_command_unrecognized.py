@@ -1,8 +1,8 @@
 import pytest
 from io import BytesIO
-from thefuck.rules.react_native_command_unrecognized import match, \
+from commandhelper.rules.react_native_command_unrecognized import match, \
     get_new_command
-from thefuck.types import Command
+from commandhelper.types import Command
 
 output = "Unrecognized command '{}'".format
 

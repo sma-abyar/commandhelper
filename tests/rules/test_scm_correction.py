@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.scm_correction import match, get_new_command
-from thefuck.types import Command
+from commandhelper.rules.scm_correction import match, get_new_command
+from commandhelper.types import Command
 
 
 @pytest.fixture

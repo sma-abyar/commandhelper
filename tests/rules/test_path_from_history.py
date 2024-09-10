@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.path_from_history import match, get_new_command
-from thefuck.types import Command
+from commandhelper.rules.path_from_history import match, get_new_command
+from commandhelper.types import Command
 
 
 @pytest.fixture(autouse=True)

@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.apt_get import match, get_new_command
-from thefuck.types import Command
+from commandhelper.rules.apt_get import match, get_new_command
+from commandhelper.types import Command
 
 
 @pytest.mark.parametrize('command, packages', [

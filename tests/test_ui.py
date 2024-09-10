@@ -2,9 +2,9 @@
 
 import pytest
 from itertools import islice
-from thefuck import ui
-from thefuck.types import CorrectedCommand
-from thefuck import const
+from commandhelper import ui
+from commandhelper.types import CorrectedCommand
+from commandhelper import const
 
 
 @pytest.fixture

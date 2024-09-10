@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from thefuck.types import Command
-from thefuck.rules.heroku_multiple_apps import match, get_new_command
+from commandhelper.types import Command
+from commandhelper.rules.heroku_multiple_apps import match, get_new_command
 
 
 suggest_output = '''

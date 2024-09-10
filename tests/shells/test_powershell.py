@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from thefuck.shells import Powershell
+from commandhelper.shells import Powershell
 
 
 @pytest.mark.usefixtures('isfile', 'no_memoize', 'no_cache')

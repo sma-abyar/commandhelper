@@ -1,7 +1,7 @@
 import pytest
 from six import BytesIO
-from thefuck.rules.ifconfig_device_not_found import match, get_new_command
-from thefuck.types import Command
+from commandhelper.rules.ifconfig_device_not_found import match, get_new_command
+from commandhelper.types import Command
 
 
 output = '{}: error fetching interface information: Device not found'
