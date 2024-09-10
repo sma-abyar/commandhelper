@@ -136,6 +136,6 @@ def configured_successfully(configuration_details):
 
 def version(commandhelper_version, python_version, shell_info):
     sys.stderr.write(
-        u'The Fuck {} using Python {} and {}\n'.format(commandhelper_version,
+        u'Command Helper {} using Python {} and {}\n'.format(commandhelper_version,
                                                        python_version,
                                                        shell_info))

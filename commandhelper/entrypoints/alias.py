@@ -7,7 +7,7 @@ from ..utils import which
 
 def _get_alias(known_args):
     if six.PY2:
-        warn("The Fuck will drop Python 2 support soon, more details "
+        warn("Command Helper will drop Python 2 support soon, more details "
              "https://github.com/sma-abyar/commandhelper/issues/685")
 
     alias = shell.app_alias(known_args.alias)

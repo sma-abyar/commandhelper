@@ -28,7 +28,7 @@ jobs:
             ${{ env.pythonLocation }}/lib/*
             ${{ env.pythonLocation }}/scripts/*
           key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('setup.py', 'requirements.txt') }}
-      - name: Install The Fuck with all dependencies
+      - name: Install Command Helper with all dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
           pip install -Ur requirements.txt coveralls
@@ -58,7 +58,7 @@ jobs:
     container: python:${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v2
-      - name: Install The Fuck with all dependencies
+      - name: Install Command Helper with all dependencies
         run: |
           pip install -Ur requirements.txt coveralls
           python setup.py develop

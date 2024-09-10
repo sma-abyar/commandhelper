@@ -1,11 +1,11 @@
-# The Fuck [![Version][version-badge]][version-link] [![Build Status][workflow-badge]][workflow-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
+# Command Helper [![Version][version-badge]][version-link] [![Build Status][workflow-badge]][workflow-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
 
-*The Fuck* is a magnificent app, inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+*Command Helper* is a magnificent app, inspired by a [@liamosaur](https://twitter.com/liamosaur/)
 [tweet](https://twitter.com/liamosaur/status/506975850596536320),
 that corrects errors in previous console commands.
 
 
-Is *The Fuck* too slow? [Try the experimental instant mode!](#experimental-instant-mode)
+Is *Command Helper* too slow? [Try the experimental instant mode!](#experimental-instant-mode)
 
 [![gif with examples][examples-link]][examples-link]
 
@@ -114,35 +114,35 @@ Reading package lists... Done
 
 ## Installation
 
-On macOS or Linux, you can install *The Fuck* via [Homebrew][homebrew]:
+On macOS or Linux, you can install *Command Helper* via [Homebrew][homebrew]:
 
 ```bash
 brew install commandhelper
 ```
 
-On Ubuntu / Mint, install *The Fuck* with the following commands:
+On Ubuntu / Mint, install *Command Helper* with the following commands:
 ```bash
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 pip3 install commandhelper --user
 ```
 
-On FreeBSD, install *The Fuck* with the following commands:
+On FreeBSD, install *Command Helper* with the following commands:
 ```bash
 pkg install commandhelper
 ```
 
-On ChromeOS, install *The Fuck* using [chromebrew](https://github.com/skycocker/chromebrew) with the following command:
+On ChromeOS, install *Command Helper* using [chromebrew](https://github.com/skycocker/chromebrew) with the following command:
 ```bash
 crew install commandhelper
 ```
 
-On Arch based systems, install *The Fuck* with the following command:
+On Arch based systems, install *Command Helper* with the following command:
 ```
 sudo pacman -S commandhelper
 ```
 
-On other systems, install *The Fuck*  by using `pip`:
+On other systems, install *Command Helper*  by using `pip`:
 
 ```bash
 pip install commandhelper
@@ -185,17 +185,17 @@ fuck -r
 pip3 install commandhelper --upgrade
 ```
 
-**Note: Alias functionality was changed in v1.34 of *The Fuck***
+**Note: Alias functionality was changed in v1.34 of *Command Helper***
 
 ## Uninstall
 
-To remove *The Fuck*, reverse the installation process:
+To remove *Command Helper*, reverse the installation process:
 - erase or comment *commandhelper* alias line from your Bash, Zsh, Fish, Powershell, tcsh, ... shell config
 - use your package manager (brew, pip3, pkg, crew, pip) to uninstall the binaries
 
 ## How it works
 
-*The Fuck* attempts to match the previous command with a rule. If a match is
+*Command Helper* attempts to match the previous command with a rule. If a match is
 found, a new command is created using the matched rule and executed. The
 following rules are enabled by default:
 
@@ -372,7 +372,7 @@ The following rules are enabled by default on specific platforms only:
 * `pacman_not_found` &ndash; fixes package name with `pacman`, `yay`, `pikaur` or `yaourt`.
 * `yum_invalid_operation` &ndash; fixes invalid `yum` calls, like `yum isntall vim`;
 
-The following commands are bundled with *The Fuck*, but are not enabled by
+The following commands are bundled with *Command Helper*, but are not enabled by
 default:
 
 * `git_push_force` &ndash; adds `--force-with-lease` to a `git push` (may conflict with `git_push_pull`);
@@ -437,7 +437,7 @@ requires_output = True
 
 ## Settings
 
-Several *The Fuck* parameters can be changed in the file `$XDG_CONFIG_HOME/commandhelper/settings.py`
+Several *Command Helper* parameters can be changed in the file `$XDG_CONFIG_HOME/commandhelper/settings.py`
 (`$XDG_CONFIG_HOME` defaults to `~/.config`):
 
 * `rules` &ndash; list of enabled rules, by default `commandhelper.const.DEFAULT_RULES`;
@@ -519,14 +519,14 @@ commandhelper_contrib_foo
   setup.py
 ```
 
-*The Fuck* will find rules located in the `rules` module.
+*Command Helper* will find rules located in the `rules` module.
 
 ##### [Back to Contents](#contents)
 
 ## Experimental instant mode
 
-The default behavior of *The Fuck* requires time to re-run previous commands.
-When in instant mode, *The Fuck* saves time by logging output with [script](https://en.wikipedia.org/wiki/Script_(Unix)),
+The default behavior of *Command Helper* requires time to re-run previous commands.
+When in instant mode, *Command Helper* saves time by logging output with [script](https://en.wikipedia.org/wiki/Script_(Unix)),
 then reading the log.
 
 [![gif with instant mode][instant-mode-gif-link]][instant-mode-gif-link]

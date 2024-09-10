@@ -62,7 +62,7 @@ ENV_TO_ATTR = {'commandhelper_RULES': 'rules',
                'commandhelper_NUM_CLOSE_MATCHES': 'num_close_matches',
                'commandhelper_EXCLUDED_SEARCH_PATH_PREFIXES': 'excluded_search_path_prefixes'}
 
-SETTINGS_HEADER = u"""# The Fuck settings file
+SETTINGS_HEADER = u"""# Command Helper settings file
 #
 # The rules are defined as in the example bellow:
 #
